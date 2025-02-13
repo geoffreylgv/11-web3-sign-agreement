@@ -1,4 +1,4 @@
-import { ethers } from "hardhat";  // Ensure correct import
+import { ethers, hre } from "hardhat";  // Correct imports
 
 async function main() {
   const [deployer] = await ethers.getSigners();
@@ -7,7 +7,7 @@ async function main() {
   const Agreement = await ethers.getContractFactory("Agreement");
   
   // Define the deployment parameters (amount and partyB address)
-  const amount = ethers.utils.parseEther("1.0"); // 1 ETH deposit
+  const amount = ethers.parseEther("1.0"); // 1 ETH deposit
   const partyB = "0xPartyBAddress";  // Replace with actual PartyB address
   
   // Deploy the contract
